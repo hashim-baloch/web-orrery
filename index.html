@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>	
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Inner Solar System</title>
+		   <!-- <meta name="author" content="Daniel A. O'Neil">    Copy-wright by the author
+		   <meta name="copyright" content="? Daniel O'Neil" /> -->
+		<style>
+		p.case { clear: both; border-top: 0px;  }
+		#modelDate { color: rgb(100,10,100); text-indent: 50px; font-style: italic; font-family:verdana; font-size:160%; }
+		</style>
+        <link rel="stylesheet" type="text/css" href="x3dom.css" />
+	</head>
+       
+<body onload="startUpdate()">
+  <img class="logo" src="logo.jpeg" alt="logo">
+		<X3D xmlns="http://www.web3d.org/specifications/x3d-namespace" showStat="false" showLog="false" x="0px" y="0px" width="100vw" height="100vh">
+          <Scene>
+			<!-- <background DEF='bgnd' transparency='0' skyColor='0 0 0' ></background> -->
+       
+      <Background DEF='bgnd' transparency='0' skyColor='0 0 0'></Background>
+	   <Transform id="theSun" translation="0 0 0">
+              <Shape>
+                <Appearance>
+                    <Material diffuseColor='1 1 0' />	
+                </Appearance>
+                <Sphere radius='0.45'/>
+             </Shape>
+		   </Transform> 
+		   <Viewpoint fieldOfView="0.785398" position="6 5.5 6.5" orientation="1 -1 0 -0.785"  description=""/>
+          </Scene>
+        </X3D>
+    </p>
+	<script src="index.js"></script>
+  <div class="controls">
+
+    <p id="modelDate"> </p>
+    <input type="range" id="myRange" name="points" min="1" max="100" value="100" step="1" onchange="showValue(this.value)"/><br>&nbsp; &nbsp;
+    <input type="button" id="orbits" value="Toggle Orbits" onclick="toggleOrbits();" />&nbsp; 
+    <input type="button" id="labels" value="Toggle labels" onclick="toggleLabels();" />
+  </div>
+  <!-- <span id="range">0</span>  -->
+  
+	<script type="text/javascript" src="x3dom.js"></script>
+   
+</body>
+</html>
